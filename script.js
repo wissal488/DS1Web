@@ -12,7 +12,7 @@ var passe=document.querySelector('.btn-passe');
 var nouveau=document.querySelector('.btn-new');
 //var activePlayer = [0,1];
 
-var score=0;
+
 
 //Question 1:
 
@@ -33,7 +33,7 @@ function init(){
 lance.addEventListener("click",function(){
 	de.style="display : yes"
 	let nbr_aleatoire = Math.floor(Math.random()*6)+1;
-	
+	let score=0;
 	switch(nbr_aleatoire){
 		case 1 : de.setAttribute('src','de-1.png');score+=1;break;
 		case 2 : de.setAttribute('src','de-2.png');score+=2;break;
@@ -71,22 +71,26 @@ passe.addEventListener("click",function joueurSuivant(){
 	player0.classList.remove("actif");
 	player1.classList.add("actif");
 	let nbr_aleatoire = Math.floor(Math.random()*6)+1;
-	
+	let score2=0;
 	switch(nbr_aleatoire){
-		case 1 : de.setAttribute('src','de-1.png');score+=1;break;
-		case 2 : de.setAttribute('src','de-2.png');score+=2;break;
-		case 3 : de.setAttribute('src','de-3.png');score+=3;break;
-		case 4 : de.setAttribute('src','de-4.png');score+=4;break;
-		case 5 : de.setAttribute('src','de-5.png');score+=5;break;
-		case 6 : de.setAttribute('src','de-6.png');score+=6;break;
+		case 1 : de.setAttribute('src','de-1.png');score2+=1;break;
+		case 2 : de.setAttribute('src','de-2.png');score2+=2;break;
+		case 3 : de.setAttribute('src','de-3.png');score2+=3;break;
+		case 4 : de.setAttribute('src','de-4.png');score2+=4;break;
+		case 5 : de.setAttribute('src','de-5.png');score2+=5;break;
+		case 6 : de.setAttribute('src','de-6.png');score2+=6;break;
 	}
 	
 
 	if(nbr_aleatoire!=1){
-		score_joueur_courent1.innerText=score;score_joueur1.innerText=score;
+		score_joueur_courent2.innerText=score2;
+		score_joueur2.innerText=score2;
 	}
 	
-	else if(nbr_aleatoire==1){score_joueur_courent1.innerText=0;score=0;} 
+	else if(nbr_aleatoire==1){
+		score_joueur_courent2.innerText=0;
+		score2=0;
+	} 
  
 
 });
